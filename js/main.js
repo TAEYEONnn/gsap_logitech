@@ -22,11 +22,23 @@ window.addEventListener('DOMContentLoaded', function () {
       gsap.to('.dot', { scale: 0.15, background: '#4274ff' });
     });
 
-  $('#header')
+  $('#header, #menu .menu_header')
     .mouseenter(function () {
       $(this).addClass('on');
     })
     .mouseleave(function () {
       $(this).removeClass('on');
     });
+
+  $('#header .ham').click(function () {
+    $('#menu').fadeToggle().toggleClass('on');
+
+    //side image move half left and right
+    const sideImgW = $('.star div:nth-childe(1)').width();
+    $('.side') / CSS('sidth', `calc(100% + ${sideImgW}px)`);
+  });
+
+  $('#menu .menu_header .ham').click(function () {
+    $('#menu').fadeToggle().toggleClass('on');
+  });
 });
