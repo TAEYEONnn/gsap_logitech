@@ -151,6 +151,7 @@
 
 #menu .visual_container > div {
   position: relative;
+  z-index: 9999;
 }
 
 #menu .visual_container .menu01 {
@@ -183,16 +184,17 @@
   display: flex;
   justify-content: space-between;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#menu .side .star > div {
+  animation: rotate 9s infinite linear;
 }
 
 #menu .side .star > div:nth-child(2) {
   margin: 8px 0;
   animation: rotate_reverse 9s infinite linear;
-}
-
-#menu .side .star > div {
-  animation: rotate 9s infinite linear;
 }
 
 @keyframes rotate {
