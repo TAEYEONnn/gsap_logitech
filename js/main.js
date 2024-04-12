@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function () {
-  //====== html document 요소가 모두 로드된 후 gasp 실행될 코드
+  //==== html document 요소가 모두 로드된 후 실행될 코드 : gsap가 자체적으로 생성하는 요소를 제어하기 위한 코드
 
-  //1. 커서 효과
+  // 1. 커서 효과
   const cursor = $('#cursor');
 
   $(document).on('mousemove', function (e) {
@@ -16,10 +16,10 @@ window.addEventListener('DOMContentLoaded', function () {
   // 2. 헤더 애니메이션 효과
   $('.cursor_effect')
     .mouseenter(function () {
-      gsap.to('.dot', { scale: 1, background: 'transparent' });
+      gsap.to('.dot', 0.5, { scale: 1, background: 'transparent' });
     })
     .mouseleave(function () {
-      gsap.to('.dot', { scale: 0.15, background: '#4274ff' });
+      gsap.to('.dot', 0.5, { scale: 0.15, background: '#4274ff' });
     });
 
   $('#header, #menu .menu_header')
@@ -33,12 +33,120 @@ window.addEventListener('DOMContentLoaded', function () {
   $('#header .ham').click(function () {
     $('#menu').fadeToggle().toggleClass('on');
 
-    //side image move half left and right
-    const sideImgW = $('.star div:nth-childe(1)').width();
-    $('.side') / CSS('sidth', `calc(100% + ${sideImgW}px)`);
+    // side image move half left and right
+    const sideImgW = $('.star div:nth-child(1)').width();
+    $('.side').css('width', `calc(100% + ${sideImgW}px)`);
   });
 
   $('#menu .menu_header .ham').click(function () {
     $('#menu').fadeToggle().toggleClass('on');
+  });
+
+  // Section 01 Scroll Animation
+  let tit = gsap.timeline(); // to, from, fromTo 등의 애니메이션 효과를 생성
+  ScrollTrigger.create({
+    animation: tit,
+    trigger: '.trigger-this-1',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: 1.8, // 마우스 이동후 .8초 정도 지연
+  });
+
+  tit
+    .add('s1') // s1 이라는 이름을 지어서 첫 번재 효과로 지정
+    .to('.main_title_01', { opacity: 0, y: -100, duration: 4 }, 's1')
+
+    .add('s2') // s2 이라는 이름을 지어서 첫 번재 효과로 지정
+    .to('.main_title_02', { opacity: 1, y: -50, duration: 4 }, 's2')
+    .to('.main_title_02', { opacity: 0, y: -100, duration: 4 })
+
+    .add('s3') // s2 이라는 이름을 지어서 첫 번재 효과로 지정
+    .to('.main_title_03', { opacity: 1, y: -50, duration: 4 }, 's3')
+    .to('.main_title_03', { opacity: 0, y: -100, duration: 4 });
+
+  gsap.to('.fix-this-1', {
+    scrollTrigger: {
+      trigger: '.trigger-this-1',
+      start: 'top top', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
+      end: 'bottom bottom', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
+      scrub: true,
+      pin: true, // trigger에 지정된 요소의 크기만큼 화면을 고정
+      // markers: true,
+    },
+  });
+
+  // Section 02 Animation
+  gsap.to('#section02 .we', {
+    scrollTrigger: {
+      trigger: '.trigger-this-we',
+      start: 'top top', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
+      end: '109.35% bottom', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
+      scrub: true,
+      pin: true, // trigger에 지정된 요소의 크기만큼 화면을 고정
+      // markers: true,
+    },
+  });
+
+  gsap.to('#section02 .we img', {
+    y: 250,
+    scrollTrigger: {
+      trigger: '#section02',
+      start: '4000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.to('.fix-this-2', {
+    scrollTrigger: {
+      trigger: '.trigger-this-2',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  let sec02 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: sec02,
+    trigger: '#section02',
+    start: '500 top',
+    end: 'bottom bottom',
+    scrub: 1,
+    markers: true,
+  });
+
+  sec02.to('#section02 .left', { x: -1000, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .star03', { x: 1000, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .keyboard', { x: 2400, y: 0, rotation: 0 }, 0);
+
+  sec02.to('#section02 .create', { x: 2300, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .title02', { x: 2100, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .connect', { x: 2200, y: 0, rotation: 0 }, 0);
+
+  sec02.to('#section02 .al_s', { x: -500, y: -300, rotation: -55 }, 0); // 마지막 파라미터 0이 없으면 순차 실행
+  sec02.to('#section02 .al_i', { x: -600, y: -700, rotation: -50 }, 0);
+  sec02.to('#section02 .al_n', { x: -500, y: -1000, rotation: -40 }, 0);
+  sec02.to('#section02 .al_c', { x: -600, y: -1300, rotation: -25 }, 0);
+  sec02.to('#section02 .al_e', { x: -600, y: -1400, rotation: -5 }, 0);
+
+  sec02.to('#section02 .no_1', { x: 100, y: -1300, rotation: 20 }, 0);
+  sec02.to('#section02 .no_9', { x: 300, y: -1150, rotation: 40 }, 0);
+  sec02.to('#section02 .no_8', { x: 500, y: -700, rotation: 55 }, 0);
+  sec02.to('#section02 .no_12', { x: 400, y: -200, rotation: 55 }, 0);
+
+  sec02.to('#section02 .underline', { x: 0, y: 900, opacity: 0 }, 0);
+
+  // section 03 blue box active when added class on
+  gsap.to('#section03', {
+    scrollTrigger: {
+      trigger: '#section03',
+      start: 'top top',
+      toggleClass: 'on',
+      markers: true,
+    },
   });
 });
