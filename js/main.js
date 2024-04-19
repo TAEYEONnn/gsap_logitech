@@ -248,7 +248,7 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   // page 1 text animatiion
-  gsap.to('#sectio05', {
+  gsap.to('#section05', {
     scrollTrigger: {
       trigger: '#section05',
       start: '-300 top',
@@ -259,7 +259,7 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   // page 2 text animatiion
-  gsap.to('#sectio05 .page02', {
+  gsap.to('#section05 .page02', {
     scrollTrigger: {
       trigger: '#section05',
       start: '300 top',
@@ -282,19 +282,18 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   // page 3 text scroll up animatiion
-  gsap.to('#sectio05 .page03 .txt', {
+  gsap.to('#section05 .page03 .txt', {
     y: -innerHeight * 2,
     scrollTrigger: {
       trigger: '#section05',
       start: () => '+=' + innerHeight * 1.5, // 화면 높이 길이의 하나 반 만큼 가로스크롤이 이동했을 때 start 마커가 하단에 나타남
-      end: 'bottom bottom',
       scrub: true,
       // markers: true,
     },
   });
 
   // page 4 text animatiion
-  gsap.to('#sectio05 .page04', {
+  gsap.to('#section05 .page04', {
     scrollTrigger: {
       trigger: '#section05',
       start: '3000 top',
@@ -318,7 +317,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // page 5 video controll animatiion
   const video05 = document.querySelector('#sc05_video');
-  gsap.to('#sectio05', {
+  gsap.to('#section05', {
     scrollTrigger: {
       trigger: '#section05',
       start: '4500 top',
