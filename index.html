@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="css/plugin/reset.css" />
     <link rel="stylesheet" href="css/plugin/common.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -12,6 +21,16 @@
     <title>Logitech | Welcome</title>
   </head>
   <body>
+    <div class="totop startPoint">
+      <span><i class="ri-arrow-up-line"></i></span>
+    </div>
+
+    <div class="indicators">
+      <!-- <span class="current"></span>
+      <span></span>
+      <span></span> -->
+    </div>
+
     <div id="cursor">
       <div class="dot"></div>
     </div>
@@ -53,7 +72,7 @@
       </div>
 
       <div class="visual_container">
-        <div class="menu01">
+        <div class="menu01" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title01.png" alt="" />
           </div>
@@ -67,7 +86,7 @@
           </div>
         </div>
 
-        <div class="menu02">
+        <div class="menu02" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title02.png" alt="" />
           </div>
@@ -81,7 +100,7 @@
           </div>
         </div>
 
-        <div class="menu03">
+        <div class="menu03" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title03.png" alt="" />
           </div>
@@ -95,7 +114,7 @@
           </div>
         </div>
 
-        <div class="menu04">
+        <div class="menu04" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title04.png" alt="" />
           </div>
@@ -140,7 +159,7 @@
 
     <!-- Main Sections -->
     <section id="container" class="container">
-      <section id="section01">
+      <section id="section01" data-idx menu-pos>
         <div class="trigger-this-1">
           <div class="fix-this-1">
             <div class="main_title main_title_01">
@@ -156,7 +175,7 @@
         </div>
       </section>
 
-      <section id="section02">
+      <section id="section02" data-idx menu-pos>
         <div class="trigger-this-we">
           <div class="we">
             <img src="img/scroll_01/section02/we.png" alt="" />
@@ -244,7 +263,7 @@
         </div>
       </section>
 
-      <section id="section03" class="">
+      <section id="section03" class="" data-idx>
         <div class="visual_container">
           <div class="title">
             <div class="title02">
@@ -277,7 +296,7 @@
         </div>
       </section>
 
-      <section id="section04">
+      <section id="section04" data-idx menu-pos>
         <div class="trigger-this-4">
           <div class="fix-this-4">
             <div class="bg">
@@ -316,7 +335,7 @@
         </div>
       </section>
 
-      <section id="section05" class="">
+      <section id="section05" class="" data-idx>
         <div class="trigger-this-5">
           <div class="underbar">
             <img src="img/scroll_01/section05/underbar.png" alt="" />
@@ -475,7 +494,8 @@
           </div>
         </div>
       </section>
-      <section id="section06">
+
+      <section id="section06" data-idx>
         <div class="trigger-this-6">
           <div class="fix-this-6">
             <div class="visual_container">
@@ -1016,7 +1036,7 @@
         </div>
       </section>
 
-      <section id="section07">
+      <section id="section07" data-idx>
         <div class="trigger-this-7">
           <div class="fix-this-7">
             <div class="video">
@@ -1026,7 +1046,6 @@
                 loop
                 muted
               ></video>
-              <!--            <img src="img/scroll_03/section04/video.jpg" alt="">-->
             </div>
 
             <div class="side">
@@ -1041,7 +1060,7 @@
         </div>
       </section>
 
-      <section id="section08">
+      <section id="section08" data-idx>
         <div class="visual_container">
           <div class="title">
             <div class="title01">
@@ -1081,7 +1100,7 @@
         </div>
       </section>
 
-      <section id="section09">
+      <section id="section09" data-idx>
         <div class="visual_container">
           <div class="title_dot">
             <div class="dot3">
@@ -1122,7 +1141,7 @@
         </div>
       </section>
 
-      <section id="section091">
+      <section id="section091" data-idx menu-pos>
         <div class="trigger-this-91">
           <div class="fix-this-91">
             <div class="side">
@@ -1160,7 +1179,7 @@
         </div>
       </section>
 
-      <section id="section10">
+      <section id="section10" data-idx>
         <div class="trigger-this-10">
           <div class="fix-this-10">
             <div class="page page02">
@@ -1279,7 +1298,7 @@
                 </div>
 
                 <div class="container02">
-                  <div class="title on">
+                  <div class="title">
                     <div>
                       <img src="img/scroll_04/section05/title02.png" alt="" />
                     </div>
@@ -1299,7 +1318,7 @@
                 </div>
 
                 <div class="container03">
-                  <div class="title on">
+                  <div class="title">
                     <div>
                       <img src="img/scroll_04/section05/title03.png" alt="" />
                     </div>
@@ -1410,6 +1429,11 @@
       var parallax = new Parallax(scene);
     </script>
 
+    <!-- From CDNJS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- From JSDELIVR -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <!-- <script src="js/plugin/gsap.js"></script>

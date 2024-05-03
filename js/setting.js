@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function () {
   // .startPoint 요소를 클릭하면 container를 (0, 0) 위치로 스크롤
   $('.startPoint').click(function () {
     container.scrollTo(0, 0, 600, {
-      callback: () => console.log('done!'), // 스크롤 완료 후 콜백 함수
+      // callback: () => console.log('done!'), // 스크롤 완료 후 콜백 함수
       easing: easing.easeInOutCirc, // 스크롤 이징 함수
     });
   });

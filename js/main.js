@@ -209,7 +209,6 @@ window.addEventListener('DOMContentLoaded', function () {
       scrub: 1.8,
       // markers: true,
     });
-
     sc05.fromTo(
       img,
       {
@@ -224,14 +223,14 @@ window.addEventListener('DOMContentLoaded', function () {
     );
   });
 
-  //section 05 page개 길이를 계산
-  let sectionCount = this.document.querySelectorAll('.fix-this-5 .page');
+  // section 05 page 5개의 길이를 계산
+  let sectionCount = document.querySelectorAll('.fix-this-5 .page');
   // console.log(sectionCount);
   let sec05_total = 0;
 
   sectionCount.forEach((section) => {
-    sec05_total += section.clientWidth;
-  }); // 각각의 page 가로크기를 합산
+    sec05_total += section.clientWidth; // 각각의 page 가로크기 합산
+  });
 
   // console.log(sec05_total);
   // console.log(innerWidth);
@@ -248,7 +247,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 1 text animatiion
+  // page 1 text animation
   gsap.to('#section05', {
     scrollTrigger: {
       trigger: '#section05',
@@ -259,7 +258,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 2 text animatiion
+  // page 2 text animation
   gsap.to('#section05 .page02', {
     scrollTrigger: {
       trigger: '#section05',
@@ -282,7 +281,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 3 text scroll up animatiion
+  // page 3 text scroll up animation
   gsap.to('#section05 .page03 .txt', {
     y: -innerHeight * 2,
     scrollTrigger: {
@@ -293,7 +292,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 4 text animatiion
+  // page 4 text animation
   gsap.to('#section05 .page04', {
     scrollTrigger: {
       trigger: '#section05',
@@ -316,7 +315,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // page 5 video controll animatiion
+  // page 5 video controll animation
   const video05 = document.querySelector('#sc05_video');
   gsap.to('#section05', {
     scrollTrigger: {
@@ -335,7 +334,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //섹션 6 화면 위치할 때 글자 슬라이드 업
+  // 섹션 6 화면 위치할 때 글자 슬라이드 업
   gsap.to('#section06', {
     scrollTrigger: {
       trigger: '#section06',
@@ -346,7 +345,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //섹션 6 화면 위치 시 스크롤 고정
+  // 섹션 6 화면 위치 시 스크롤 고정
   gsap.to('.fix-this-6', {
     scrollTrigger: {
       trigger: '.trigger-this-6',
@@ -371,18 +370,19 @@ window.addEventListener('DOMContentLoaded', function () {
   sec06.to('#section06 .side .right', { x: 1000 }, 0);
   sec06.to('#section06 .underbar', { y: 1000 }, 0);
 
-  //section 06 chapter image move animation
+  // section 06 chapter image move animation
   gsap.to('#section06 .visual_container .chapter', {
     x: 480,
     scrollTrigger: {
       trigger: '#section06',
       start: '1200 top',
+      end: '5000 bottom',
       scrub: true,
       // markers: true,
     },
   });
 
-  //section 06 square height animation
+  // section 06 sqare height 0 animation
   gsap.to('#section06 .visual_container .square > div', {
     height: 0,
     scrollTrigger: {
@@ -394,7 +394,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section 06 title move animation
+  // section 06 sqare height 0 animation
   gsap.to('#section06 .visual_container .title', {
     x: 180,
     scrollTrigger: {
@@ -406,7 +406,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section 06 headset move animation
+  // section 06 headset move animation
   gsap.to('#section06 .visual_container .headset', {
     x: 1800,
     scrollTrigger: {
@@ -418,7 +418,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section 06 title text scale up animation
+  // section 06 title text scale up animation
   gsap.to('#title_svg', {
     scale: 60,
     y: 2400,
@@ -432,8 +432,8 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section 07 video controll animation
-  const video07 = this.document.querySelector('#sc07_video');
+  // section 07 video controll animation
+  const video07 = document.querySelector('#sc07_video');
   gsap.to('#section07', {
     scrollTrigger: {
       trigger: '#section07',
@@ -447,14 +447,14 @@ window.addEventListener('DOMContentLoaded', function () {
         $('#header').addClass('on');
       },
       onLeaveBack: () => {
-        video07.curruntTime = 0;
+        video07.currentTime = 0;
         $('#section07 .side').removeClass('on');
         $('#header').removeClass('on');
       },
     },
   });
 
-  //section07 fix on scroll
+  // section 07 fix on scroll
   gsap.to('.fix-this-7', {
     scrollTrigger: {
       trigger: '.trigger-this-7',
@@ -466,7 +466,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section07 video scale down animation
+  // section 07 video scale down animation
   gsap.to('#section07 .video', {
     scale: 0.8,
     y: 15,
@@ -479,10 +479,8 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section07 side image remove class on
+  // section 07 side image remove class on
   gsap.to('#section07 .side', {
-    scale: 0.8,
-    y: 15,
     scrollTrigger: {
       trigger: '#section07',
       start: '1800 top',
@@ -490,26 +488,25 @@ window.addEventListener('DOMContentLoaded', function () {
       scrub: true,
       // markers: true,
       onEnter: () => {
-        // 스크롤이 트리거 요소의 시작 위치에 도달헀을 때
-        $('#section07 .side').addClass('on');
+        // 스크롤이 트리거 요소의 시작 위치에 도달했을 때
+        $('#section07 .side').removeClass('on');
       },
       // onEnterBack: () => {
-      //   // 스크롤이 트리거 요소의 시작 위치에 역방향으로 도달헀을 때
+      //   // 스크롤이 트리거 요소의 사작 위치에 역방향으로 도달했을 때
       //   $('#section07 .side').addClass('on');
       // },
-
       // onLeave: () => {
       //   // 스크롤이 트리거 요소의 끝 위치를 지났을 때
       //   $('#section07 .side').removeClass('on');
       // },
-      onEnter: () => {
-        // 스크롤이 트리거 요소의 시작 위치에 도달헀을 때
+      onLeaveBack: () => {
+        // 스크롤이 트리거 요소의 끝 위치를 역방향으로 지났을 때
         $('#section07 .side').addClass('on');
       },
     },
   });
 
-  //secion 08,09 title text slide animation
+  // section 08, 09 title text slide up animation
   function section0809Title(section, position) {
     gsap.to(section, {
       scrollTrigger: {
@@ -525,11 +522,12 @@ window.addEventListener('DOMContentLoaded', function () {
   section0809Title('#section08', '-300');
   section0809Title('#section09', '-500');
 
-  //secion 091 title text slide animation
+  // section 091 header remove class on
   gsap.to('.fix-this-91', {
     scrollTrigger: {
       trigger: '.trigger-this-91',
       start: 'top top',
+      end: 'bottom bottom',
       scrub: true,
       pin: true,
       // markers: true,
@@ -542,18 +540,18 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //secion 091 title text slide animation
+  // section 091 title text slide up animation
   gsap.to('#section091', {
     scrollTrigger: {
       trigger: '#section091',
       start: '-300 top',
       scrub: true,
-      // markers: true,
       toggleClass: 'on',
+      // markers: true,
     },
   });
 
-  //secion 091 mouse image animation
+  // section 091 mouse image animation
   gsap.to('#section091 .mouse', {
     x: 0,
     y: -2000,
@@ -567,7 +565,7 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   // section 10 horizontal scroll animation
-  const section10pages = this.document.querySelectorAll('#section10 .page');
+  const section10pages = document.querySelectorAll('#section10 .page');
   // console.log(section10pages);
   let sec10_total = 0;
 
@@ -578,7 +576,7 @@ window.addEventListener('DOMContentLoaded', function () {
   // console.log(sec10_total);
 
   gsap.to('.fix-this-10', {
-    x: -(sec05_total - innerWidth),
+    x: -(sec10_total - innerWidth),
     scrollTrigger: {
       trigger: '.trigger-this-10',
       start: 'top top',
@@ -592,23 +590,6 @@ window.addEventListener('DOMContentLoaded', function () {
   const video10 = document.querySelector('#sc10_video');
   const video11 = document.querySelector('#sc11_video');
 
-  gsap.to('#section10', {
-    scrollTrigger: {
-      trigger: '#section10',
-      start: '1200 top',
-      scrub: true,
-      // markers: true,
-      onEnter: () => {
-        video11.play();
-      },
-
-      onLeaveBack: () => {
-        video11.curruntTime = 0; // 비디오 재생 시간을 0으로 되돌림
-        video11.pause();
-      },
-    },
-  });
-
   function playVideoSec10(top, vidElmt) {
     gsap.to('#section10', {
       scrollTrigger: {
@@ -617,12 +598,12 @@ window.addEventListener('DOMContentLoaded', function () {
         scrub: true,
         // markers: true,
         onEnter: () => {
-          video10.play();
+          vidElmt.play();
         },
 
         onLeaveBack: () => {
-          video10.curruntTime = 0; // 비디오 재생 시간을 0으로 되돌림
-          video10.pause();
+          vidElmt.currentTime = 0; // 비디오 재생 시간을 0으로 되돌림
+          vidElmt.pause();
         },
       },
     });
@@ -632,13 +613,13 @@ window.addEventListener('DOMContentLoaded', function () {
   playVideoSec10('1200', video11);
 
   // javascript add or remove class :
-  // abc.classList.add('on') or abc.classList.remove('on')
+  // abc.classList.add('on) or abc.classList.remove('on')
 
-  // select element:
-  //  document.querySelector('abc");
+  // select element :
+  // document.querySelector('.abc');
 
-  //jQuery add or remove class:
-  // abc.classList.add('on') or abc.classList.remove('on')
+  // jQuery add or remove class:
+  // abc.addClass('on') or abc.removeClass('on')
 
   // select element:
   // $('.abc')
@@ -662,9 +643,9 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   animateTextSec10('400', '#section10 .page03');
-  animateTextSec10('4500', '#section10 .page05 .container01 .title');
-  animateTextSec10('5500', '#section10 .page05 .container02 .title');
-  animateTextSec10('6500', '#section10 .page05 .container03 .title');
+  animateTextSec10('2800', '#section10 .page05 .container01 .title');
+  animateTextSec10('3500', '#section10 .page05 .container02 .title');
+  animateTextSec10('4200', '#section10 .page05 .container03 .title');
 
   function scrollMouse(evenOdd, height) {
     gsap.to(`#section10 .page03 .mouse ${evenOdd}`, {
@@ -680,4 +661,43 @@ window.addEventListener('DOMContentLoaded', function () {
 
   scrollMouse('.odd', -innerHeight);
   scrollMouse('.even', innerHeight);
+
+  // scroll move to each section
+  const sections = $('[data-idx]');
+
+  for (let i = 0; i < sections.length; i++) {
+    $('.indicators').append(`<span class="point-${i}"></span>`);
+
+    ScrollTrigger.create({
+      trigger: sections[i],
+      start: 'top 50%',
+      end: 'bottom 50%',
+      toggleClass: {
+        targets: `.point-${i}`,
+        className: 'current',
+      },
+    });
+  }
+
+  $('.indicators span').click(function () {
+    const idx = $(this).index();
+    const sectionTop = sections[idx].offsetTop;
+
+    container.scrollTo(0, sectionTop, 600, {
+      easing: easing.easeInOutCirc, // 스크롤 이징 함수
+    });
+  });
+
+  const menuPositions = $('[menu-pos');
+
+  $('[menu-list]').click(function () {
+    const idx = $(this).index();
+    const menuListTop = menuPositions[idx].offsetTop;
+
+    container.scrollTo(0, menuListTop, 600, {
+      easing: easing.easeInOutCirc, // 스크롤 이징 함수
+    });
+
+    $('#menu').fadeToggle().toggleClass('on');
+  });
 });
